@@ -4,3 +4,7 @@ RemoteSystemsTempFiles
 .metadata
 .settings
 target
+.classpath
+.project
+crm/.classpath
+crm/.project
