@@ -4,11 +4,17 @@ RECOMMENDED DEV TOOLS:
 -MySQL 
 
 SETUP:
+
 -create database in mysql
+
 CREATE DATABASE euphoria
+
 -create a user for mysql
+
 CREATE USER 'server'@'localhost' IDENTIFIED BY 'serverpwd';
+
 -grant access to the database
+
 GRANT ALL PRIVILEGES ON * . * TO 'server'@'localhost';
 
 ECLIPSE SETUP: 
