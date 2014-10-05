@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.euphoria.data.entity.Customer;
 import com.euphoria.data.repository.CustomerRepository;
+import com.euphoria.data.repository.CustomerSearchRepository;
 
 @Controller
 public class CustomerController {
@@ -28,7 +29,10 @@ public class CustomerController {
 
 	@Autowired
 	private CustomerRepository customerRepository;
-
+	
+	@Autowired
+	private CustomerSearchRepository customerSearchRepository;
+	
 	@RequestMapping(value = PATH, method = RequestMethod.GET)
 	public String customerHome(ModelMap model) {
 		model.addAttribute(CUSTOMER, new Customer());
@@ -39,18 +43,7 @@ public class CustomerController {
 	@RequestMapping(value = PATH, method = RequestMethod.POST,params="keyword")
 	public String customerSearch(@RequestParam String keyword, ModelMap model) {
 		if (keyword != null) {
-			List<Customer> result = new ArrayList<Customer>();
-			Iterable<Customer> customers = customerRepository.findAll();
-
-			for (Customer customer : customers) {
-				if (containsNullSafe(keyword, 
-									customer.getFirstName(),
-									customer.getLastName(), 
-									customer.getEmail())) {
-					log.info(customer.getFirstName());
-					result.add(customer);
-				}
-			}
+			List<Customer> result = customerRepository.findDistinctCustomerByKeyword(keyword);
 			model.addAttribute(CUSTOMERS, result);
 		}
 		model.addAttribute(CUSTOMER, new Customer());
@@ -81,15 +74,5 @@ public class CustomerController {
 			view = DEFAULT_VIEW;
 		}
 		return view;
-	}
-
-	private boolean containsNullSafe(String keyword, String... targets) {
-		for (String target : targets) {
-			if (target != null && target.length() > 0
-					&& target.toLowerCase().contains(keyword.toLowerCase())) {
-				return true;
-			}
-		}
-		return false;
 	}
 }
