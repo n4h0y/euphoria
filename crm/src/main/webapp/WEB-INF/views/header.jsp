@@ -45,7 +45,7 @@ $(document).ready(function(){
   margin-top: 10px;
 }
 
-.register {
+.action {
     border: none; 
         
     h3 {
