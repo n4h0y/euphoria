@@ -9,9 +9,11 @@ import org.springframework.data.repository.query.Param;
 
 import com.euphoria.data.entity.Customer;
 
-public interface CustomerRepository extends CrudRepository<Customer, Long>, JpaRepository<Customer, Long> {
+public interface CustomerRepository extends CrudRepository<Customer, Long>,
+		JpaRepository<Customer, Long> {
 
-	@Query(value="select distinct(*) from Customer c where c.firstName like %:keyword% OR c.lastName like %:keyword% OR c.email like %:keyword%" , nativeQuery=true)
-	public List<Customer> findDistinctCustomerByKeyword(@Param("keyword") String keyword);
+	@Query(value = "select distinct * from Customer c where c.firstName like %:keyword% OR c.lastName like %:keyword% OR c.email like %:keyword%", nativeQuery = true)
+	public List<Customer> findDistinctCustomerByKeyword(
+			@Param("keyword") String keyword);
 
 }

@@ -6,13 +6,15 @@
 	<tiles:putAttribute name="content">
 
 		<div class="content">
-			<div class="action">				
+			<div class="action">
+				<c:if test="customers.size() < 1">
+					<b>Not found</b>
+				</c:if>				
 					<ol>
 						<c:forEach var="cust" items="${customers}">
 							<li><a href="customer/${cust.customerId}"><c:out value="${cust.firstName}"/></a></li>
 						</c:forEach>
-					</ol> 
-									
+					</ol> 									
 				<h3>Search for an existing customer</h3>
 				<form method="POST" action="customer">
 					<div>

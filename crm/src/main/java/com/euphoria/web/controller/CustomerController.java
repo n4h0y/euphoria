@@ -36,7 +36,6 @@ public class CustomerController {
 	@RequestMapping(value = PATH, method = RequestMethod.GET)
 	public String customerHome(ModelMap model) {
 		model.addAttribute(CUSTOMER, new Customer());
-		model.addAttribute("keyword", new String());
 		return DEFAULT_VIEW;
 	}
 
