@@ -3,11 +3,10 @@
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="content">
-
 		<div class="body">
 			<div class="crudform">
 				<div class="register">
-					<h3>CUSTOMER.JSP</h3>
+					<h1>CUSTOMER.JSP</h1>
 					<form:form method="PUT" action="customer" commandName="customer">
 					<div>
 						<label for="firstName">First Name</label>

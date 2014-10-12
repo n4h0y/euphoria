@@ -4,9 +4,10 @@
 
 <tiles-definitions>
     <definition name="defaultTemplate" template="/WEB-INF/views/template.jsp">
+        <put-attribute name="htmlHeader" value="/WEB-INF/views/htmlHeader.jsp" />
         <put-attribute name="header" value="/WEB-INF/views/header.jsp" />
         <put-attribute name="navigation_bar" value="/WEB-INF/views/menu.jsp" />
-        <put-attribute name="content" value="/WEB-INF/views/content.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/views/content.jsp" />
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
     </definition>
 </tiles-definitions>
