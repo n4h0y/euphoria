@@ -7,7 +7,7 @@
 
 		<div class="content">
 			<div class="action">
-				<c:if test="customers.size() < 1">
+				<c:if test="${customers.size() < 1}">
 					<b>Not found</b>
 				</c:if>				
 					<ol>
