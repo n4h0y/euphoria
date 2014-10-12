@@ -4,7 +4,6 @@
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="content">
-
 		<div class="content">
 			<div class="action">
 				<c:if test="customers.size() < 1">
@@ -15,7 +14,7 @@
 							<li><a href="customer/${cust.customerId}"><c:out value="${cust.firstName}"/></a></li>
 						</c:forEach>
 					</ol> 									
-				<h3>Search for an existing customer</h3>
+				<h1>Search for an existing customer</h1>
 				<form method="POST" action="customer">
 					<div>
 						<label for="firstName">Keyword</label>
@@ -23,8 +22,8 @@
 					</div>
 					<input type="submit" value="Search" id="search" class="button" />					
 				</form>				
-				<h3>OR</h3>
-				<h3>Create a new customer</h3>
+				<h1>OR</h1>
+				<h1>Create a new customer</h1>
 				<form:form method="POST" action="customer" commandName="customer">
 					<div>
 						<label for="firstName">First Name</label>
