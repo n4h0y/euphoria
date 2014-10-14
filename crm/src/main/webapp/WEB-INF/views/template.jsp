@@ -8,18 +8,18 @@
 <tiles:insertAttribute name="htmlHeader" />
 </head>
 <body>
-	<tiles:insertAttribute name="header" />
-	<div id="web-page" class="content">
-		<tiles:insertAttribute name="navigation_bar" />
-		<div id="page-content" class="container class">
-			<div class="span12">
-				<tiles:insertAttribute name="content" />
-			</div>
-		</div>
-		<div></div>
-		<div id="footer_wrapper">
-			<tiles:insertAttribute name="footer" />
-		</div>
-	</div>
+    <div id="web-page" class="content">
+        <div id="page-content" class="container class">
+            <tiles:insertAttribute name="header" />
+            <tiles:insertAttribute name="navigation_bar" />
+            <div class="span12">
+                <tiles:insertAttribute name="content" />
+            </div>
+        </div>
+        <div></div>
+        <div id="footer_wrapper">
+            <tiles:insertAttribute name="footer" />
+        </div>
+    </div>
 </body>
 </html>

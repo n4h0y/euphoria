@@ -19,8 +19,6 @@
 <link href="<c:url value="/"/>resources/css/stylesheet.css" rel="stylesheet" type="text/css" />
 
 <script src="<c:url value="/"/>resources/js/jquery-1.8.3.min.js" type="text/javascript"></script>
-<script src="<c:url value="/"/>resources/js/jquery.blockUI-2.39.js" type="text/javascript"></script>
-<script src="<c:url value="/"/>resources/js/header-menu-ajax.js" type="text/javascript"></script>
 
 <script src="<c:url value="/"/>resources/js/respond.min.js" type="text/javascript"></script>
 <script src="<c:url value="/"/>resources/js/bootstrap.min.js" type="text/javascript"></script>

@@ -12,22 +12,23 @@
 		});
 	})
 </script>
+
 <div id="menu-container">
-	<div class="container menu topSpace">
-		<ul id="nav">
-			<div class="main-menu">
-				<spring:url value="/about" var="aboutUrl" htmlEscape="true" />
-				<spring:url value="/" var="homeUrl" htmlEscape="true" />
-				<spring:url value="/customer" var="customerUrl" htmlEscape="true" />
-				<li class="<%if (request.getServletPath().indexOf("home") != -1) {%>selected<%}%>"><a href="${homeUrl}">Home</a></li>
-				<li class="midList <%if (request.getServletPath().indexOf("customer") != -1) {%>selected<%}%>"><a href="${customerUrl}">Customer</a></li>
-				<li class="<%if (request.getServletPath().indexOf("about") != -1) {%>selected<%}%>"><a href="${aboutUrl}">About</a></li>
-				<li class="<%if (request.getServletPath().indexOf("about") != -1) {%>selected<%}%>"><a href="${aboutUrl}">About</a></li>
-				<li class="midList <%if (request.getServletPath().indexOf("about") != -1) {%>selected<%}%>"><a href="${aboutUrl}">About</a></li>
-			</div>
-		</ul>
-		<div id="pull">
-			<a href="#">Menu</a>
-		</div>
-	</div>
+    <div class="menu topSpace">
+        <div class="main-menu">
+            <ul id="nav">
+                <spring:url value="/about" var="aboutUrl" htmlEscape="true" />
+                <spring:url value="/" var="homeUrl" htmlEscape="true" />
+                <spring:url value="/customer" var="customerUrl" htmlEscape="true" />
+                <li class="<%if (request.getServletPath().indexOf("home") != -1) {%>selected<%}%>"><a href="${homeUrl}">Home</a></li>
+                <li class="midList <%if (request.getServletPath().indexOf("customer") != -1) {%>selected<%}%>"><a href="${customerUrl}">Customer</a></li>
+                <li class="<%if (request.getServletPath().indexOf("about") != -1) {%>selected<%}%>"><a href="${aboutUrl}">About</a></li>
+                <li class="<%if (request.getServletPath().indexOf("about") != -1) {%>selected<%}%>"><a href="${aboutUrl}">About</a></li>
+                <li class="midList <%if (request.getServletPath().indexOf("about") != -1) {%>selected<%}%>"><a href="${aboutUrl}">About</a></li>
+            </ul>
+        </div>
+        <div id="pull">
+            <a href="#">Menu</a>
+        </div>
+    </div>
 </div>

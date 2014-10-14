@@ -1,6 +1,5 @@
 package com.euphoria.web.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -41,12 +40,13 @@ public class CustomerController {
 
 	@RequestMapping(value = PATH, method = RequestMethod.POST,params="keyword")
 	public String customerSearch(@RequestParam String keyword, ModelMap model) {
+		List<Customer> result = null;
 		if (keyword != null) {
-			List<Customer> result = customerRepository.findDistinctCustomerByKeyword(keyword);
-			model.addAttribute(CUSTOMERS, result);
+			result = customerRepository.findDistinctCustomerByKeyword(keyword);
 		}
+		model.addAttribute(CUSTOMERS, result);
 		model.addAttribute(CUSTOMER, new Customer());
-		model.addAttribute("keyword", new String());
+		model.addAttribute("keyword", keyword);
 		return DEFAULT_VIEW;
 	}
 

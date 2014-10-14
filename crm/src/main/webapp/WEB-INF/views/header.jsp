@@ -1,5 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 
 <script>
 	$(function() {
@@ -23,8 +23,8 @@
 </script>
 
 <div class="container header position-rel">
-	<spring:url value="/" var="homeUrl" htmlEscape="true" />
-	<a class="logo" href="${homeUrl}" title="Home">
-		<div id="logo"></div>
-	</a>
+    <spring:url value="/" var="homeUrl" htmlEscape="true" />
+    <a class="logo" href="${homeUrl}" title="Home">
+        <div id="logo"></div>
+    </a>
 </div>
