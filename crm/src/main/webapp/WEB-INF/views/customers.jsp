@@ -6,24 +6,37 @@
     <tiles:putAttribute name="content">
         <div class="content">
             <div class="action">
-                <c:if test="${empty customers}">
-                    <b>Not found</b>
-                </c:if>
-                <ol>
-                    <c:forEach var="cust" items="${customers}">
-                        <li><a href="customer/${cust.customerId}"><c:out value="${cust.firstName}" /></a></li>
-                    </c:forEach>
-                </ol>
                 <h1>Search for an existing customer</h1>
                 <form method="POST" action="customer">
                     <div>
-                        <label for="firstName">Keyword</label>
-                        <input name="keyword" value="${keyword}" placeholder="Enter first name, last name or email address" type="text" />
+                        <label for="firstName">Keyword</label> <input name="keyword" value="${keyword}"
+                            placeholder="Enter first name, last name or email address" type="text" />
                     </div>
                     <div>
                         <input type="submit" value="Search" id="search" class="button" />
                     </div>
                 </form>
+                <c:choose>
+                    <c:when test="${customers == null}" />
+                    <c:when test="${empty customers}">
+                        <b>Not found</b>
+                    </c:when>
+                    <c:otherwise>
+                        <tiles:insertDefinition name="dataTableTemplate">
+                            <tiles:putAttribute name="theader">
+                                <tr>
+                                    <th>Customer name</th>
+                                </tr>
+                            </tiles:putAttribute>
+                            <tiles:putAttribute name="tbody">
+                                <c:forEach var="cust" items="${customers}">
+                                    <tr>
+                                        <td><a href="customer/${cust.customerId}"><c:out value="${cust.firstName}" /></a></td>
+                                </c:forEach>
+                            </tiles:putAttribute>
+                        </tiles:insertDefinition>
+                    </c:otherwise>
+                </c:choose>
                 <h1>OR</h1>
                 <h1>Create a new customer</h1>
                 <form:form method="POST" action="customer" commandName="customer">
