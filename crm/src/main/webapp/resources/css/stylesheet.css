@@ -246,8 +246,8 @@ i[class^="icon-"]+a:hover, i[class^="icon-"]+a:focus {
 }
 
 [class^="icon-"], [class*=" icon-"] {
- width: 30px;
- height: 30px;
+ width: 20px;
+ height: 20px;
  vertical-align: middle;
 }
 
@@ -528,4 +528,24 @@ td label {
  height: 52px;
  margin: 10px 20px;
  display: inline-block;
+}
+
+.zero-margin {
+ margin: 0px;
+}
+}
+
+.icon-user-edit {
+ background: url('/euphoria-crm/resources/images/icons/edit_user.png') no-repeat;
+ width: 20px !important;
+ height: 20px !important;
+ border: none;
+}
+
+.icon-user-delete {
+ background: url('/euphoria-crm/resources/images/icons/remove_user.png') no-repeat;
+ background-size: 20px 20px;
+ width: 20px !important;
+ height: 20px !important;
+ border: none;
 }
