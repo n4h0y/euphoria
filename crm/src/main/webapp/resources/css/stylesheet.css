@@ -533,7 +533,6 @@ td label {
 .zero-margin {
  margin: 0px;
 }
-}
 
 .icon-user-edit {
  background: url('/euphoria-crm/resources/images/icons/edit_user.png') no-repeat;
@@ -548,4 +547,36 @@ td label {
  width: 20px !important;
  height: 20px !important;
  border: none;
+}
+
+/* Section styling */
+div.section {
+ width: 100%;
+ padding-top: 15px;
+}
+
+div.section div.section-heading {
+ border: 2px solid #B19CD9;
+ border-radius: 10px 10px 0px 0px;
+ padding: 10px 10px;
+ background-color: #B19CD9;
+ height: initial;
+}
+
+div.section div.section-heading.collapse {
+ border-radius: 10px 10px 10px 10px;
+}
+
+div.section div.section-heading a {
+ display: block;
+ color: white;
+ text-decoration: none;
+ font-weight: bold;
+}
+
+div.section div.section-content {
+ padding: 10px 10px;
+ border: 2px solid #B19CD9;
+ border-radius: 0px 0px 10px 10px;
+ -webkit-margin-start: 0px;
 }
