@@ -34,10 +34,10 @@ public class DBConfig {
     public DataSource dataSource() {
 
         PoolProperties p = new PoolProperties();
-        p.setDriverClassName(env.getProperty("jdbc.driver"));
-        p.setUrl(env.getProperty("jdbc.url"));
-        p.setUsername(env.getProperty("jdbc.username"));
-        p.setPassword(env.getProperty("jdbc.password"));
+        p.setDriverClassName(getProperty("jdbc.driver"));
+        p.setUrl(getProperty("jdbc.url"));
+        p.setUsername(getProperty("jdbc.username"));
+        p.setPassword(getProperty("jdbc.password"));
         p.setJmxEnabled(true);
         p.setTestWhileIdle(false);
         p.setTestOnBorrow(true);
@@ -74,7 +74,7 @@ public class DBConfig {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setGenerateDdl(true);
         vendorAdapter.setShowSql(true);        
-        vendorAdapter.setDatabase(Database.MYSQL);
+        vendorAdapter.setDatabase(getDatabase(getProperty("jdbc.dbtype")));
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
@@ -105,4 +105,16 @@ public class DBConfig {
         return txManager;
     }
 
+    private Database getDatabase(String databaseType){
+    	for (Database database: Database.values()){
+    		if (database.name().equals(databaseType)){
+    			return database;
+    		}
+    	}
+    	return null;
+    }
+    
+    private String getProperty(String key) {
+    	return env.getProperty(key);
+    }
 }
