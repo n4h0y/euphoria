@@ -1,9 +1,7 @@
 package com.euphoria.web.controller;
 
-import java.util.List;
-
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,85 +11,62 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.euphoria.data.entity.Customer;
+import com.euphoria.data.repository.CommonSearchRepository;
 import com.euphoria.data.repository.CustomerRepository;
-import com.euphoria.data.repository.CustomerSearchRepository;
 
 @Controller
-public class CustomerController {
-    private static final Logger log = Logger.getLogger(CustomerController.class);
+public class CustomerController extends BaseController<Customer> {
 
     private static final String CUSTOMER = "customer";
     private static final String CUSTOMERS = "customers";
-    private static final String DEFAULT_VIEW = CUSTOMERS;
-    private static final String CUSTOMER_VIEW = CUSTOMER;
     private static final String PATH = "/" + CUSTOMER;
-    private static final String DELETE_CUSTOMER_VIEW = "/" + CUSTOMER + "/delete";
-    private static final String PAGE_MESSAGE = "message";
+    private static final String DELETE_VIEW = "/" + CUSTOMER + "/delete";
+
+    public CustomerController() {
+        super(CUSTOMERS, CUSTOMER);
+    }
 
     @Autowired
     private CustomerRepository customerRepository;
 
-    @Autowired
-    private CustomerSearchRepository customerSearchRepository;
-
     @RequestMapping(value = PATH, method = RequestMethod.GET)
     public String customerHome(ModelMap model) {
-        model.addAttribute(CUSTOMER, new Customer());
-        return DEFAULT_VIEW;
+        return super.home(model);
     }
 
     @RequestMapping(value = PATH, method = RequestMethod.POST, params = "keyword")
     public String customerSearch(@RequestParam String keyword, ModelMap model) {
-        List<Customer> result = null;
-        if (keyword != null) {
-            result = customerRepository.findDistinctCustomerByKeyword(keyword);
-        }
-        model.addAttribute(CUSTOMERS, result);
-        model.addAttribute(CUSTOMER, new Customer());
-        model.addAttribute("keyword", keyword);
-        return DEFAULT_VIEW;
+        return super.entitySearch(keyword, model);
     }
 
     @RequestMapping(value = PATH, method = RequestMethod.POST)
     public String addCustomer(@ModelAttribute Customer customer, ModelMap model) {
-        if (customer != null) {
-            Customer result = customerRepository.save(customer);
-            model.addAttribute(CUSTOMER, result);
-            return CUSTOMER_VIEW;
-        }
-        return DEFAULT_VIEW;
+        return super.addEntity(customer, model);
     }
 
     @RequestMapping(value = PATH + "/{id}", method = RequestMethod.GET)
     public String customerId(@PathVariable Long id, ModelMap model) {
-        Customer customer = customerRepository.findOne(id);
-
-        String view;
-        if (customer != null) {
-            model.addAttribute(CUSTOMER, customer);
-            view = CUSTOMER_VIEW;
-        } else {
-            view = DEFAULT_VIEW;
-        }
-        return view;
+        return super.getEntity(id, model);
     }
 
-    @RequestMapping(value = DELETE_CUSTOMER_VIEW, method = RequestMethod.POST, params = "customerId")
+    @RequestMapping(value = DELETE_VIEW, method = RequestMethod.POST, params = "customerId")
     public String deleteCustomer(@RequestParam Long customerId, ModelMap model) {
-        Customer customer = customerRepository.findOne(customerId);
+        return super.deleteEntity(customerId, model);
+    }
 
-        String message;
-        if (customer != null) {
-            //customerRepository.delete(customerId);
-            message = "Customer " + customerId + " has been deleted.";
-        } else {
-            message = "Error occurred while deleting customer.";
-        }
+    @Override
+    protected Customer createBlankObject() {
+        return new Customer();
+    }
 
-        model.addAttribute(CUSTOMER, new Customer());
-        model.addAttribute(PAGE_MESSAGE, message);
+    @Override
+    protected CrudRepository<Customer, Long> getCrudRepository() {
+        return customerRepository;
+    }
 
-        return DEFAULT_VIEW;
+    @Override
+    protected CommonSearchRepository<Customer> getSearchRepository() {
+        return customerRepository;
     }
 
 }
