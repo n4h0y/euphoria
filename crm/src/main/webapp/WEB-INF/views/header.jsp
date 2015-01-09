@@ -22,9 +22,10 @@
 	})
 </script>
 
-<div class="container header position-rel">
+
+<div class="jumbotron logo">
     <spring:url value="/" var="homeUrl" htmlEscape="true" />
     <a class="logo" href="${homeUrl}" title="Home">
-        <div id="logo"></div>
     </a>
 </div>
+

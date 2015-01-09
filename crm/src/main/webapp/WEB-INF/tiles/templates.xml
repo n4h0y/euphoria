@@ -8,7 +8,7 @@
         <put-attribute name="optionalHtmlHeader" />
         <put-attribute name="header" value="/WEB-INF/views/header.jsp" />
         <put-attribute name="navigation_bar" value="/WEB-INF/views/menu.jsp" />
-        <put-attribute name="content" value="/WEB-INF/views/content.jsp" />
+        <put-attribute name="content" />
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
     </definition>
 </tiles-definitions>

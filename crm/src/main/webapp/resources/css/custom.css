@@ -1,0 +1,92 @@
+/* Bootstrap elements */
+.navbar {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.nav {
+	margin-top: 4px;
+}
+
+.createNew {
+	margin-top: 10px;
+}
+
+.form-actions {
+	margin-top: 10px;
+}
+
+.jumbotron {
+	padding-bottom: 100px;
+	margin-bottom: 10px;
+	width: 100%'
+}
+
+.nav li a {
+	color: #B19CD9;
+}
+
+.nav-pills li.active a {
+	background-image: -webkit-linear-gradient(top, #B19CD9 0, #7C6D98 100%);
+	background-image: -o-linear-gradient(top, #B19CD9 0, #7C6D98 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#B19CD9),
+		to(#7C6D98));
+	background-image: linear-gradient(to bottom, #B19CD9 0, #7C6D98 100%);
+	border-color: #B19CD9
+}
+
+.nav-pills li.active a:hover {
+	background-color: #7C6D98;
+}
+
+.nav-pills li.active a:focus {
+	background-color: #7C6D98;
+}
+
+.btn-info {
+	background-image: -webkit-linear-gradient(top, #B19CD9 0, #7C6D98 100%);
+	background-image: -o-linear-gradient(top, #B19CD9 0, #7C6D98 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#B19CD9),
+		to(#7C6D98));
+	background-image: linear-gradient(to bottom, #B19CD9 0, #7C6D98 100%);
+	border-color: #B19CD9
+}
+
+.btn-info:hover, .btn-info:focus {
+	background-color: #7C6D98;
+	background-position: 0 -15px;
+	border-color: #7C6D98
+}
+
+.btn-info:active, .btn-info.active {
+	background-color: #7C6D98;
+	border-color: #7C6D98
+}
+
+.btn-info:disabled, .btn-info[disabled] {
+	background-color: #7C6D98;
+	background-image: none;
+	border-color: #7C6D98
+}
+
+.form-control{
+	margin-top:20px;
+}
+
+.control-label{
+	margin-top:20px;
+}
+
+.form-actions button{
+	margin-top:20px;
+}
+/* end of Bootstrap elements */
+
+/* Euphoria specific elements */
+.logo {
+	background: url('../images/Portal_logo.png');
+	background-position: 50%;
+	background-color: #B19CD9;
+	background-repeat: no-repeat;
+	width: 100%
+}

@@ -12,19 +12,13 @@
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
 
-<link href="${cssURL}" rel="stylesheet" type="text/css" />
-<link href="<c:url value="/"/>resources/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="<c:url value="/"/>resources/css/bootstrap-revised.css" rel="stylesheet" type="text/css" />
-<link href="<c:url value="/"/>resources/css/responsive.css" rel="stylesheet" type="text/css" />
-<link href="<c:url value="/"/>resources/css/stylesheet.css" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/"/>resources/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/"/>resources/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/"/>resources/css/custom.css" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/"/>resources/images/favicon.ico" rel="icon" type="image/x-icon" />
+<link href="<c:url value="/"/>resources/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-<script src="<c:url value="/"/>resources/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-
-<script src="<c:url value="/"/>resources/js/respond.min.js" type="text/javascript"></script>
-<script src="<c:url value="/"/>resources/js/bootstrap.min.js" type="text/javascript"></script>
-
-<link href="<c:url value="/"/>images/favicon.ico" rel="icon" type="image/x-icon" />
-<link href="<c:url value="/"/>images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<script src="<c:url value="/"/>resources/js/bootstrap.min.js"></script>
 
 <script>
 	$(document).ready(function() {

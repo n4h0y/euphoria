@@ -23,7 +23,7 @@
 		</script>
 	</tiles:putAttribute>
 	<tiles:putAttribute name="content">
-		<div class="content">
+		<div class="container">
 			<div class="section">
 				<div class="section-heading expand">
 					<a href="#">Customer Detaills</a>
