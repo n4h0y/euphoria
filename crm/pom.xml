@@ -12,10 +12,10 @@
 		<spring-data.version>1.7.0.RELEASE</spring-data.version>
 		<hibernate.version>4.3.2.Final</hibernate.version>
 		<jdk.version>1.7</jdk.version>
-		<jee.version>7.0</jee.version>
 		<tiles.version>3.0.4</tiles.version>
 		<junit.version>4.11</junit.version>
-		<javax.servlet.version>2.3.1</javax.servlet.version>
+		<javax.jsp.version>2.3.1</javax.jsp.version>
+        <javax.servlet.version>2.5</javax.servlet.version>
 	</properties>
 
 	<dependencies>
@@ -121,17 +121,13 @@
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
-			<version>${javax.servlet.version}</version>
+			<version>${javax.jsp.version}</version>
+            <scope>provided</scope>
 		</dependency>
-		<dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>${javax.servlet.version}</version>
-        </dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<version>${javax.servlet.version}</version>
 			<scope>provided</scope>
 		</dependency>
 

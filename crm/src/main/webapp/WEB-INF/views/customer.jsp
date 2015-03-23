@@ -1,6 +1,5 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="optionalHtmlHeader">
